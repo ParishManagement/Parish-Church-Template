@@ -4,6 +4,10 @@ $(function(){
 	$("a.left").hide();
 	$("a.right").hide();
 	window.scrollTo(0,1);
+	var viewportWidth = $(window).width();
+	var viewportHeight = $(window).height();
+	$(".carousel-inner .item").css("height",viewportHeight+"px");
+	$(".carousel-inner .item").css("width",viewportWidth+"px");
 	/*Profile View */
 	$(document).on("mouseover",".profile",function(e){
 		e.preventDefault();
