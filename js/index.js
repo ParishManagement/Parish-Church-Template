@@ -4,10 +4,17 @@ $(function(){
 	$("a.left").hide();
 	$("a.right").hide();
 	window.scrollTo(0,1);
-	var viewportWidth = $(window).width();
-	var viewportHeight = $(window).height();
-	$(".carousel-inner .item").css("height",viewportHeight+"px");
-	$(".carousel-inner .item").css("width",viewportWidth+"px");
+	var viewportWidth="" ,viewportHeight = ""; 
+	$(window).resize(function(){
+		viewportWidth = $(window).width();
+		viewportHeight = $(window).height();
+		$(".myOwnContainer").css("width",viewportWidth+"px");
+		$(".imageHolder").css("height",viewportHeight+"px");
+		$(".imageHolder").css("width",viewportWidth+"px");
+	});
+	$(window).resize();
+	setCarouselHeight('#carousel-example');
+	$("#carousel-example").css("top",viewportHeight/2+"px");
 	/*Profile View */
 	$(document).on("mouseover",".profile",function(e){
 		e.preventDefault();
@@ -181,3 +188,22 @@ function closeOverlay(){
 	 $("#overlayContent").html("");
 	 $("body").css("overflow", "");
 }
+
+function setCarouselHeight(id)
+    {
+        var slideHeight = [];
+        $(id+' .item').each(function()
+        {
+            // add all slide heights to an array
+            slideHeight.push($(this).height());
+        });
+
+        // find the tallest item
+        max = Math.max.apply(null, slideHeight);
+
+        // set the slide's height
+        $(id+' .carousel-content').each(function()
+        {
+            $(this).css('height',max+'px');
+        });
+    }
