@@ -1,20 +1,39 @@
 $(function(){
 	console.log("Jquery is loading");
+	window.scrollTo(0,1);
 	$(".profileHiddenDiv").hide();
 	$("a.left").hide();
 	$("a.right").hide();
-	window.scrollTo(0,1);
-	var viewportWidth="" ,viewportHeight = ""; 
-	$(window).resize(function(){
-		viewportWidth = $(window).width();
-		viewportHeight = $(window).height();
-		$(".myOwnContainer").css("width",viewportWidth+"px");
-		$(".imageHolder").css("height",viewportHeight+"px");
+	var viewportWidth="" ,viewportHeight = "",documentHeight = 0,slide2Offset = 0,documentHeighReached = false,slideHeight = 0;; 
+	var is_mobile = false;
+    if( $('#some-element').css('display')=='none') {
+        is_mobile = true;       
+    }
+	console.log("logged  in device",is_mobile);
+    // now i can use is_mobile to run javascript conditionally
+    $(window).resize(function(){
+		if (is_mobile == true) {
+			viewportWidth = $(window).width();
+			viewportHeight = $(window).height();
+		} else {
+			viewportWidth = $(window).width();
+			viewportHeight = $(window).height();
+		}
+		$("#slide1").css("height",viewportHeight+"px");
+		$("#slide1").css("width",viewportWidth+"px");
 		$(".imageHolder").css("width",viewportWidth+"px");
+		$(".imageHolder").css("height",viewportHeight+"px");
+		$("#slide2").css("height",viewportHeight+"px");
+		$("#slide2").css("width",viewportWidth+"px");
+		$("#slide3").css("height",viewportHeight+"px");
+		$("#slide3").css("width",viewportWidth+"px");
+		$("#carousel-example").css("height",viewportHeight+"px");
+		//$(".imageHolder").css("width",viewportWidth+"px");
 	});
 	$(window).resize();
 	setCarouselHeight('#carousel-example');
-	$("#carousel-example").css("top",viewportHeight/2+"px");
+	$(".carousel-inner").css("top",viewportHeight/2-50+"px");
+	$(".carousel-inner").css("left","50px");
 	/*Profile View */
 	$(document).on("mouseover",".profile",function(e){
 		e.preventDefault();
@@ -162,7 +181,44 @@ $(function(){
 		$("ul.navbar-nav li a").css("color","white");
 		$(this).addClass("active");
 		$(this).find("a").css("color","black");
-	})
+	});
+	/*KeyPress Events*/
+	slideHeight = $("#slide2").offset().top;
+	documentHeight = $(document).height();
+	$(document).on("keyup",function(e){
+		e.preventDefault();
+		console.log("e.which",e.which);
+		console.log($("#slide2").offset());
+		if(e.which == 40){
+			console.log("slide2Offset down",slide2Offset);
+			console.log("slide2Offset down",slideHeight);
+			slide2Offset += slideHeight;
+			if(slide2Offset < documentHeight){
+				$('html,body').animate({scrollTop: slide2Offset}, 1000);
+			} else {
+				console.log("document height reached");
+				documentHeighReached = true;
+				slide2Offset = documentHeight;
+				console.log("down else",slide2Offset);
+			}
+		} else if(e.which == 38){
+			if(slide2Offset != 0){
+				console.log("before",slide2Offset);
+				if(documentHeighReached){
+					slide2Offset = slide2Offset-2*slideHeight;
+					documentHeighReached = false;
+				} else {
+					slide2Offset = slide2Offset-slideHeight;
+				}
+				$('html,body').animate({scrollTop: slide2Offset}, 1000);
+			} else {
+				console.log("at the top");	
+			}
+		} else {
+			console.log("other event is pressed");
+		}
+	});
+	
 });
 
 function displayOverlay(contentToDisplay){

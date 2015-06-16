@@ -13,7 +13,7 @@ table.priestInfoTable>tbody>tr>td {
     height:100%;
 }
 
-img {
+img:hover{
   filter: gray; /* IE6-9 */
   -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
     -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
@@ -22,8 +22,36 @@ img {
     margin-bottom:20px;
 }
 
-img:hover {
+img{
   filter: none; /* IE6-9 */
   -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
  
+}
+#slide1, #slide2,#slide3{ width: 100%; }
+#slide1{
+	background:url('../images/final0.jpg') 50% 0 no-repeat fixed;
+	color: #fff;
+	margin: 0;
+	padding: 200px 0 260px 0;
+	background-size: cover;
+}
+
+#slide2{
+	background: url('../images/final3.jpg') 50% 0 no-repeat fixed;
+	color: #fff;
+	margin: 0;
+	padding: 200px 0 260px 0;
+	background-size: cover;
+}
+
+#slide3{
+	background: url('../images/final2.jpg') 50% 0 no-repeat fixed;
+	color: #fff;
+	margin: 0;
+	padding: 200px 0 260px 0;
+	background-size: cover;
+}
+
+@media only screen and (max-width: 760px) {
+  #some-element { display: none; }
 }
