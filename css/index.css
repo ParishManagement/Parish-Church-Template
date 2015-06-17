@@ -56,9 +56,9 @@ img{
   #some-element { display: none; }
 }
 
-.downArrow {
+/* .downArrow {
 	background-image : url("../images/down-arrow-icon.png");
 	background-repeat : no-repeat;
 	position:fixed;
 	bottom : 10px;
-}
+} */
