@@ -29,29 +29,36 @@ img{
 }
 #slide1, #slide2,#slide3{ width: 100%; }
 #slide1{
-	background:url('../images/final0.jpg') 50% 0 no-repeat fixed;
+	/* background:url('../images/final0.jpg') 50% 0 no-repeat fixed; */
 	color: #fff;
 	margin: 0;
-	padding: 200px 0 260px 0;
+	/* padding: 200px 0 260px 0; */
 	background-size: cover;
 }
 
 #slide2{
-	background: url('../images/final3.jpg') 50% 0 no-repeat fixed;
+	/* background: url('../images/final3.jpg') 50% 0 no-repeat fixed; */
 	color: #fff;
 	margin: 0;
-	padding: 200px 0 260px 0;
+	/* padding: 200px 0 260px 0; */
 	background-size: cover;
 }
 
 #slide3{
-	background: url('../images/final2.jpg') 50% 0 no-repeat fixed;
+	/* background: url('../images/final2.jpg') 50% 0 no-repeat fixed; */
 	color: #fff;
 	margin: 0;
-	padding: 200px 0 260px 0;
+	/* padding: 200px 0 260px 0; */
 	background-size: cover;
 }
 
 @media only screen and (max-width: 760px) {
   #some-element { display: none; }
+}
+
+.downArrow {
+	background-image : url("../images/down-arrow-icon.png");
+	background-repeat : no-repeat;
+	position:fixed;
+	bottom : 10px;
 }
