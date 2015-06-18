@@ -1,11 +1,6 @@
 $(function(){
 	console.log("Jquery is loading");
-	var viewportWidth="" ,viewportHeight = "",documentHeight = 0,slide2Offset = 0,documentHeighReached = false,slideHeight = 0,is_mobile = false;
-	/* if(){
-		
-	} else {
-		
-	} */
+	var viewportWidth="" ,viewportHeight = "",documentHeight = 0,slide2Offset = 0,documentHeighReached = false,slideHeight = 0,slideHeightForArrows = 0,is_mobile = false;
 	$(window).resize(function(){
 		if (is_mobile == true) {
 			viewportWidth = $(window).width();
@@ -14,7 +9,7 @@ $(function(){
 			viewportWidth = $(window).width();
 			viewportHeight = $(window).height();
 		}
-		$("#slide1,#slide2,#slide3").css({
+		$("#slide1,#slide2,#slide3,#slide4").css({
 			"height":viewportHeight+"px",
 			"width":viewportWidth+"px"
 		});
@@ -26,12 +21,14 @@ $(function(){
 		$(".downArrow").css("left",viewportWidth/2-50+"px");
 		slideHeight = $("#slide2").offset().top;
 		documentHeight = $(document).height();
+		slideHeightForArrows = slideHeight;
 		$(".carousel-inner").css({
 			"top":viewportHeight/2-50+"px",
 			'left':"0px"
 		});
 	});
 	$(window).resize();
+	$("[rel^='lightbox']").prettyPhoto();
 	pageLoadInit();
 	$(document).on("mouseover","#carousel-example",function(e){
 		e.preventDefault();
@@ -57,21 +54,29 @@ $(function(){
 		console.log("e.which",e.which);
 		console.log($("#slide2").offset());
 		if(e.which == 40){
-			$(".upArrow").show();
 			console.log("slide2Offset down",slide2Offset);
-			console.log("slide2Offset down",slideHeight);
+			$(".upArrow").show();
 			slide2Offset += slideHeight;
-			if(slide2Offset != documentHeight){
+			if(slide2Offset < documentHeight){
 				$('html,body').animate({scrollTop: slide2Offset}, 1000);
+				slideHeightForArrows += slideHeight;
+				console.log("slideHeightForArrows",slideHeightForArrows);
+				console.log("documentHeight in down",documentHeight);
+				if(slideHeightForArrows == documentHeight){
+					$(".downArrow").hide();
+					slideHeightForArrows = slideHeight;
+				} else {
+					$(".downArrow").show();
+				}
 			} else {
 				console.log("document height reached");
 				documentHeighReached = true;
 				slide2Offset = documentHeight;
-				console.log("down else",slide2Offset);
 			}
 		} else if(e.which == 38){
+			console.log("slide2Offset up",slide2Offset);
+			$(".downArrow").show();
 			if(slide2Offset != 0){
-				console.log("before",slide2Offset);
 				if(documentHeighReached){
 					slide2Offset = slide2Offset-2*slideHeight;
 					documentHeighReached = false;
@@ -101,14 +106,19 @@ $(function(){
 	  if(e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
 		//scroll down
 		console.log("e.originalEvent.wheelDelta",e.originalEvent.wheelDelta);
-		console.log("e.originalEvent.detail",e.originalEvent.detail);
-		console.log('Down');
 		$(".upArrow").show();
-		console.log("slide2Offset down",slide2Offset);
-		console.log("slide2Offset down",slideHeight);
 		slide2Offset += slideHeight;
-		if(slide2Offset != documentHeight){
+		if(slide2Offset < documentHeight){
 			$('html,body').animate({scrollTop: slide2Offset}, 1000);
+			slideHeightForArrows += slideHeight;
+			console.log("slideHeightForArrows",slideHeightForArrows);
+			console.log("documentHeight in down",documentHeight);
+			if(slideHeightForArrows == documentHeight){
+				$(".downArrow").hide();
+				slideHeightForArrows = slideHeight;
+			} else {
+				$(".downArrow").show();
+			}
 		} else {
 			console.log("document height reached");
 			documentHeighReached = true;
@@ -117,9 +127,7 @@ $(function(){
 		}
 	  } else {
 		//scroll up
-		console.log("e.originalEvent.wheelDelta",e.originalEvent.wheelDelta);
-		console.log("e.originalEvent.detail",e.originalEvent.detail);
-		console.log('Up');
+		$(".downArrow").show();
 		if(slide2Offset != 0){
 			console.log("before",slide2Offset);
 			if(documentHeighReached){
@@ -141,9 +149,20 @@ $(function(){
 	  //prevent page fom scrolling
 	  return false;
 	});
-	//handleUserEventsFun();
-	//Show and Hide of Carousal Controls
-	$(document).on("click",".downArrow")
+	/* $('.galleryImage img').mouseenter(function(e) {
+		$(this).css("cursor","pointer");
+		$(this).animate({width: "200%", height: "200%"}, 'slow');
+		e.preventDefault();
+	});
+
+	$('.galleryImage img').mouseleave(function(e) {   
+		$(this).animate({width: "100%"}, 'slow');
+		e.preventDefault();
+	}); */
+	$(document).on("click",".galleryImage img",function(e){
+		console.log($(this).attr("src"));
+		e.preventDefault();
+	})
 });
 function pageLoadInit(){
 	$('html,body').animate({scrollTop: 0}, 1000);
@@ -198,30 +217,3 @@ function setCarouselHeight(id)
             $(this).css('height',max+'px');
         });
     }
-function scrollDown(slide2Offset,slideHeight){
-	var documentHeight = $(document).height();
-	if(slide2Offset != documentHeight){
-		$('html,body').animate({scrollTop: slide2Offset}, 1000);
-	} else {
-		console.log("document height reached");
-		documentHeighReached = true;
-		slide2Offset = documentHeight;
-		console.log("down else",slide2Offset);
-	}
-}
-
-function scrollUpFun(slide2Offset,slideHeight){
-	if(slide2Offset != 0){
-		console.log("before",slide2Offset);
-		var documentHeight = $(document).height();
-		if(slide2Offset == documentHeight){
-			slide2Offset = slide2Offset-2*slideHeight;
-			documentHeighReached = false;
-		} else {
-			slide2Offset = slide2Offset-slideHeight;
-		}
-		$('html,body').animate({scrollTop: slide2Offset}, 1000);
-	} else {
-		console.log("at the top");	
-	}
-}

@@ -31,10 +31,10 @@
 		</style>
 	</head>
 	<body style="overflow-y:hidden;">
-		<div class="downArrow" style="height:50px;width:50px;position: fixed;bottom: 0px;opacity: 1;z-index: 99;margin: auto;cursor:pointer;">
+		<div class="downArrow" style="height:50px;width:50px;position: fixed;bottom: 10px;opacity: 1;z-index: 99;margin: auto;cursor:pointer;">
 			<img src="images/down-arrow-icon.png" alt="downArrow" style="max-height:100%;max-width:100%;background-color:white;border-radius:100px;"/>
 		</div>
-		<div class="upArrow" style="height:50px;width:50px;position: fixed;bottom: 0px;opacity: 1;z-index: 99;margin: auto;right:5px;cursor:pointer;">
+		<div class="upArrow" style="height:50px;width:50px;position: fixed;bottom: 10px;opacity: 1;z-index: 99;margin: auto;right:5px;cursor:pointer;">
 			<img src="images/up-arrow-icon.png" alt="upArrow" style="max-height:100%;max-width:100%;background-color:white;border-radius:100px;"/>
 		</div>
 		<div class="container-fluid">
@@ -50,10 +50,10 @@
 				  </div>
 				 <div class="collapse navbar-collapse" id="myNavbar">
 				   <ul class="nav navbar-nav">
-					 <li><a href="#home" style="color:white;"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
+					 <li id="home"><a href="#home" style="color:white;"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
 					 <li><a href="#church" style="color:white;"><span class="glyphicon glyphicon-tower"></span>&nbsp;Church</a></li>
 					 <li><a href="#priest" style="color:white;"><span class="glyphicon glyphicon-user"></span>&nbsp;Priest</a></li> 
-					 <li><a href="#gallery" style="color:white;"><span class="glyphicon glyphicon-picture"></span>&nbsp;Gallery</a></li> 
+					 <li id="gallery"><a href="#gallery" style="color:white;"><span class="glyphicon glyphicon-picture"></span>&nbsp;Gallery</a></li> 
 				   </ul>
 				   <ul class="nav navbar-nav navbar-right" style="margin-right:0px;">
 					 <li><a href="#" style="color:white;"><span class="glyphicon glyphicon-user"></span> Sign up for Newsletter</a></li>
@@ -113,22 +113,53 @@
 				</div>
 			</div>
 			<div id="slide2">
+				<div class="container gallery" style="position:relative;">
+					<div class="thumbnails row" style="position:absolute;z-index:99;top:80px;list-style-type:none;">
+						<h3 style="margin-left:15px;">Church Gallery</h3>
+						<div class="col-md-3 col-sm-3 col-lg-3">
+							<a class="thumbnail" rel="lightbox[group]" href="images/final0.jpg"><img class="group1" src="images/final0.jpg" title="Image Title" /></a>
+						</div> <!--end thumb -->
+						<div class="col-md-3 col-sm-3 col-lg-3">
+							<a class="thumbnail" rel="lightbox[group]" href="images/final2.jpg"><img class="group1" src="images/final2.jpg" title="Image Title" /></a>
+						</div> <!--end thumb -->
+						<div class="col-md-3 col-sm-3 col-lg-3">
+							<a class="thumbnail" rel="lightbox[group]" href="images/final3.jpg"><img class="group1" src="images/final3.jpg" title="Image Title" /></a>
+						</div> <!--end thumb -->
+						<div class="col-md-3 col-sm-3 col-lg-3">
+							<a class="thumbnail" rel="lightbox[group]" href="images/final0.jpg"><img class="group1" src="images/final0.jpg" title="Image Title" /></a>
+						</div> <!--end thumb -->
+						<div class="clearfix"></div>
+						<div class="col-md-3 col-sm-3 col-lg-3">
+							<a class="thumbnail" rel="lightbox[group]" href="images/final2.jpg"><img class="group1" src="images/final2.jpg" title="Image Title" /></a>
+						</div> <!--end thumb -->
+						<div class="col-md-3 col-sm-3 col-lg-3">
+							<a class="thumbnail" rel="lightbox[group]" href="images/final3.jpg"><img class="group1" src="images/final3.jpg" title="Image Title" /></a>
+						</div> <!--end thumb -->
+						<div class="col-md-3 col-sm-3 col-lg-3">
+							<a class="thumbnail" rel="lightbox[group]" href="images/final0.jpg"><img class="group1" src="images/final0.jpg" title="Image Title" /></a>
+						</div> <!--end thumb -->
+						<div class="col-md-3 col-sm-3 col-lg-3">
+							<a class="thumbnail" rel="lightbox[group]" href="images/final3.jpg"><img class="group1" src="images/final3.jpg" title="Image Title" /></a>
+						</div> <!--end thumb -->
+					</div><!--end thumbnails -->
+				</div>
 				<div class="imageHolder">
-					<img src="images/final3.jpg" alt="Church Image" style="height:100%;width:100%;"/>
-					<div class="container">
-						<div class="row">
-							<div class="col-xs-offset-3 col-xs-6">
-								<h1>Gallery</h1>
-							</div>
-						</div>
-					</div>
+					<img src="images/slide1.jpg" alt="Church Image" style="height:100%;width:100%;"/>
 				</div>
 			</div>
-			<div id="slide3" style="position:relative;">
+			<div id="slide3">
 				<div class="imageHolder">
-					<img src="images/final2.jpg" alt="Church Image" style="height:100%;width:100%;"/>
+					<img src="images/slide3.jpg" alt="Church Image" style="height:100%;width:100%;"/>
 				</div>
-				<div class="content">
+			</div>
+			<div id="slide4">
+				<div class="container gallery" style="position:relative;">
+					<div class="thumbnails row" style="position:absolute;z-index:99;top:80px;list-style-type:none;">
+						
+					</div><!--end thumbnails -->
+				</div>
+				<div class="imageHolder">
+					<img src="images/slide5.jpg" alt="Church Image" style="height:100%;width:100%;"/>
 				</div>
 			</div>
 		</div>
@@ -148,11 +179,18 @@
 		<link rel="stylesheet" href="css/libs/bootstrap-min.css" />
 		<link rel="stylesheet" href="css/libs/animate.css" />
 		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
 		<!-- Scripts Goes here -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script src="js/libs/jquery-2-1-4.js"></script>
 		<script src="js/libs/bootstrap-min.js"></script>
 		<script src="js/index.js"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <script src="js/main.js"></script>
 	</body>
 </html>

@@ -13,9 +13,9 @@ table.priestInfoTable>tbody>tr>td {
     height:100%;
 }
 
-img:hover{
-  filter: gray; /* IE6-9 */
-  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+/* img:hover{
+  filter: gray;
+  -webkit-filter: grayscale(1); 
     -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
     box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
@@ -23,9 +23,38 @@ img:hover{
 }
 
 img{
-  filter: none; /* IE6-9 */
-  -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
+  filter: none; 
+  -webkit-filter: grayscale(0); 
  
+} */
+/* img {
+  filter: gray; 
+  -webkit-filter: grayscale(1); 
+    -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    margin-bottom:20px;
+}
+
+img:hover {
+  filter: none; 
+  -webkit-filter: grayscale(0); 
+ 
+} */
+/* img{
+	-webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    margin-bottom:20px;
+}
+.galleryImage img:hover{
+	cursor : pointer;
+} */
+.galleryImage img{
+	margin-bottom : 20px;
+}
+.galleryImage img:hover{
+	cursor : pointer;
 }
 #slide1, #slide2,#slide3{ width: 100%; }
 #slide1{
