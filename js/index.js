@@ -1,5 +1,6 @@
 $(function(){
 	console.log("Jquery is loading");
+	//alert("page is loading");
 	var viewportWidth="" ,viewportHeight = "",documentHeight = 0,slide2Offset = 0,documentHeighReached = false,slideHeight = 0,slideHeightForArrows = 0,is_mobile = false;
 	$(window).resize(function(){
 		if (is_mobile == true) {
@@ -23,7 +24,7 @@ $(function(){
 		documentHeight = $(document).height();
 		slideHeightForArrows = slideHeight;
 		$(".carousel-inner").css({
-			"top":viewportHeight/2-50+"px",
+			"top":"80px",
 			'left':"0px"
 		});
 	});
@@ -55,19 +56,20 @@ $(function(){
 		console.log($("#slide2").offset());
 		if(e.which == 40){
 			console.log("slide2Offset down",slide2Offset);
-			$(".upArrow").show();
+			//$(".upArrow").show();
+			//$(".downArrow").hide();
 			slide2Offset += slideHeight;
 			if(slide2Offset < documentHeight){
 				$('html,body').animate({scrollTop: slide2Offset}, 1000);
 				slideHeightForArrows += slideHeight;
 				console.log("slideHeightForArrows",slideHeightForArrows);
 				console.log("documentHeight in down",documentHeight);
-				if(slideHeightForArrows == documentHeight){
-					$(".downArrow").hide();
-					slideHeightForArrows = slideHeight;
-				} else {
-					$(".downArrow").show();
-				}
+				// if(slideHeightForArrows == documentHeight){
+				// 	$(".downArrow").hide();
+				// 	slideHeightForArrows = slideHeight;
+				// } else {
+				// 	$(".downArrow").show();
+				// }
 			} else {
 				console.log("document height reached");
 				documentHeighReached = true;
@@ -75,7 +77,7 @@ $(function(){
 			}
 		} else if(e.which == 38){
 			console.log("slide2Offset up",slide2Offset);
-			$(".downArrow").show();
+			//$(".downArrow").show();
 			if(slide2Offset != 0){
 				if(documentHeighReached){
 					slide2Offset = slide2Offset-2*slideHeight;
@@ -86,6 +88,7 @@ $(function(){
 				$('html,body').animate({scrollTop: slide2Offset}, 1000);
 				if(slide2Offset == 0){
 					$(".upArrow").hide();
+					//$(".downArrow").show();
 				} else {
 					$(".upArrow").show();
 				}
@@ -101,54 +104,61 @@ $(function(){
 			$(".upAndDownControls img").attr("src","images/down-arrow-icon.png");
 		} */
 	});
-	$('html,body').on('DOMMouseScroll mousewheel', function (e) {
-	e.preventDefault();
-	  if(e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
-		//scroll down
-		console.log("e.originalEvent.wheelDelta",e.originalEvent.wheelDelta);
-		$(".upArrow").show();
+	$(document).on("click",".downArrow",function(e){
+		//alert("click function");
+		e.preventDefault();
+		console.log("click function");
+		$('html,body').animate({scrollTop: slideHeight}, 1000);
 		slide2Offset += slideHeight;
-		if(slide2Offset < documentHeight){
-			$('html,body').animate({scrollTop: slide2Offset}, 1000);
-			slideHeightForArrows += slideHeight;
-			console.log("slideHeightForArrows",slideHeightForArrows);
-			console.log("documentHeight in down",documentHeight);
-			if(slideHeightForArrows == documentHeight){
-				$(".downArrow").hide();
-				slideHeightForArrows = slideHeight;
-			} else {
-				$(".downArrow").show();
-			}
-		} else {
-			console.log("document height reached");
-			documentHeighReached = true;
-			slide2Offset = documentHeight;
-			console.log("down else",slide2Offset);
-		}
-	  } else {
-		//scroll up
-		$(".downArrow").show();
-		if(slide2Offset != 0){
-			console.log("before",slide2Offset);
-			if(documentHeighReached){
-				slide2Offset = slide2Offset-2*slideHeight;
-				documentHeighReached = false;
-			} else {
-				slide2Offset = slide2Offset-slideHeight;
-			}
-			$('html,body').animate({scrollTop: slide2Offset}, 1000);
-			if(slide2Offset == 0){
-				$(".upArrow").hide();
-			} else {
-				$(".upArrow").show();
-			}
-		} else {
-			console.log("at the top");	
-		}
-	  }
-	  //prevent page fom scrolling
-	  return false;
-	});
+	})
+	// $('html,body').on('DOMMouseScroll mousewheel', function (e) {
+	// e.preventDefault();
+	//   if(e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
+	// 	//scroll down
+	// 	console.log("e.originalEvent.wheelDelta",e.originalEvent.wheelDelta);
+	// 	$(".upArrow").show();
+	// 	slide2Offset += slideHeight;
+	// 	if(slide2Offset < documentHeight){
+	// 		$('html,body').animate({scrollTop: slide2Offset}, 1000);
+	// 		slideHeightForArrows += slideHeight;
+	// 		console.log("slideHeightForArrows",slideHeightForArrows);
+	// 		console.log("documentHeight in down",documentHeight);
+	// 		if(slideHeightForArrows == documentHeight){
+	// 			$(".downArrow").hide();
+	// 			slideHeightForArrows = slideHeight;
+	// 		} else {
+	// 			$(".downArrow").show();
+	// 		}
+	// 	} else {
+	// 		console.log("document height reached");
+	// 		documentHeighReached = true;
+	// 		slide2Offset = documentHeight;
+	// 		console.log("down else",slide2Offset);
+	// 	}
+	//   } else {
+	// 	//scroll up
+	// 	$(".downArrow").show();
+	// 	if(slide2Offset != 0){
+	// 		console.log("before",slide2Offset);
+	// 		if(documentHeighReached){
+	// 			slide2Offset = slide2Offset-2*slideHeight;
+	// 			documentHeighReached = false;
+	// 		} else {
+	// 			slide2Offset = slide2Offset-slideHeight;
+	// 		}
+	// 		$('html,body').animate({scrollTop: slide2Offset}, 1000);
+	// 		if(slide2Offset == 0){
+	// 			$(".upArrow").hide();
+	// 		} else {
+	// 			$(".upArrow").show();
+	// 		}
+	// 	} else {
+	// 		console.log("at the top");	
+	// 	}
+	//   }
+	//   //prevent page fom scrolling
+	//   return false;
+	// });
 	/* $('.galleryImage img').mouseenter(function(e) {
 		$(this).css("cursor","pointer");
 		$(this).animate({width: "200%", height: "200%"}, 'slow');
@@ -163,6 +173,17 @@ $(function(){
 		console.log($(this).attr("src"));
 		e.preventDefault();
 	})
+	// $(document).on("click","#downArrowId",function(e){
+	// 	alert("click function");
+	// 	e.preventDefault();
+	// 	console.log("click function");
+	// 	$('html,body').animate({scrollTop: slideHeight}, 1000);
+	// })
+	// $("#downArrow").click(function(e){
+	// 	e.preventDefault();
+	// 	console.log("click function");
+	// 	$('html,body').animate({scrollTop: slideHeight}, 1000);
+	// })
 });
 function pageLoadInit(){
 	$('html,body').animate({scrollTop: 0}, 1000);
