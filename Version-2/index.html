@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html> 
+	<head> 
+		<title>Parallax Scrolling with HTML and jQuery - MrBool Tutorial</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width:device-width;initial-scale=1" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href = "index.css" />
+		<link rel="stylesheet" href = "common.css" />
+	</head>
+	<body style="overflow-x:hidden !important;"> 
+		<div class="container-fluid">
+			<nav class="navbar navbar-default navbar-fixed-top" style="font-size:1.15em;">
+			  <div class="labelcolor">
+				  <div class="navbar-header">
+				   <button width="100" height="100" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				   </button>
+				   <a class="navbar-brand" href="#"><img class="fa fa-circle-o" style="width:200px; margin-top: -7px;" /></a>
+				  </div>
+				 <div class="collapse navbar-collapse" id="myNavbar">
+				   <ul class="nav navbar-nav">
+					 <li id="home"><a href="#home" style="color:white;"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
+					 <li><a href="#church" style="color:white;"><span class="glyphicon glyphicon-tower"></span>&nbsp;Church</a></li>
+					 <li><a href="#priest" style="color:white;"><span class="glyphicon glyphicon-user"></span>&nbsp;Priest</a></li> 
+					 <li id="gallery"><a href="#gallery" style="color:white;"><span class="glyphicon glyphicon-picture"></span>&nbsp;Gallery</a></li> 
+				   </ul>
+				   <ul class="nav navbar-nav navbar-right" style="margin-right:0px;">
+					 <li><a href="#" style="color:white;"><span class="glyphicon glyphicon-user"></span> Sign up for Newsletter</a></li>
+					 <li><a href="#" style="color:white;"><span class="glyphicon glyphicon-search"></span> Church Finder</a></li>
+				   </ul>
+				</div>
+			  </div>
+			 </nav>
+		 </div>
+		<div class="container-fluid" style="height:100%;padding:0;margin:0;">
+			<div id="homePage" class="bgParallax" data-speed="10"> 
+				<div class="container">
+					<div style="position:relative;top:50px;" id="carousel-example" class="carousel slide" data-ride="carousel">
+						<!-- Wrapper for slides -->
+						<div class="row">
+							<div class="col-xs-offset-3 col-xs-6">
+								<div class="carousel-inner">
+									<div class="item active">
+										<div class="carousel-content" style="color:white;">
+											<div style="text-align:center;">
+												<h1>Job Verses19:25</h1>
+												<p>25  I know that my Redeemer lives, and that in the end he will stand upon the earth.</p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="carousel-content"style="color:white;">
+											<div style="text-align:center;">
+												<h1>Revelation Verses 3:5</h1>
+												<p>5  He who overcomes will, like them, be dressed in white. I will never blot out his name from the book of life, but will acknowledge his name before my Father and his angels.</p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="carousel-content" style="color:white;">
+											<div style="text-align:center;">
+												<h1>Revelation Verses 3:5</h1>
+												<p>5  He who overcomes will, like them, be dressed in white. I will never blot out his name from the book of life, but will acknowledge his name before my Father and his angels.</p>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> 
+			<div id="churchPage" class="bgParallax" data-speed="10"> 
+				<div class="container">
+					<div class="row">
+						<div class="churchInformation col-sm-12 col-md-12 col-lg-12 posRelative" style="top:20px;">
+							<div class="col-sm-6 col-md-6 col-lg-6">
+								<div class="churchProfile">
+									<div class="profileInfo">
+									</div>
+								</div>
+								<div class="churchContactInformation">
+								
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-6">
+								<div class="churchHistory">
+								
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="priestProfie" class="bgParallax" data-speed="10">
+				<div class="container">
+					<div class="row">
+						<div class="priestProfileInformation col-sm-12 col-md-12 col-lg-12">
+							<div class="col-sm-6 col-md-6 col-lg-6">
+								<div class="churchProfile">
+									<div class="profileInfo">
+									</div>
+								</div>
+								<div class="priestContactInformation">
+								
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-6">
+								<div class="priestKeySkills">
+								
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="churchGallery" class="bgParallax" data-speed="10"> 
+				
+			</div> 
+			<div id="footer" class="bgParallax" data-speed="10"> 
+				
+			</div>
+		</div>
+	<!-- Loading Scripts -->
+	<script src="jquery-2-1-4.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src = "index.js" ></script>
+	</body> 
+</html>
