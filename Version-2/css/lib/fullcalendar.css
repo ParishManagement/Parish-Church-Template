@@ -46,7 +46,7 @@ body .fc { /* extra precedence to overcome jqui */
 }
 
 .fc-unthemed .fc-today {
-	background: #ccc;
+	background: rgb(83,189,125);
 }
 
 .fc-highlight { /* when user is selecting cells */
@@ -807,7 +807,7 @@ a.fc-more:hover {
 
 .fc-ltr .fc-basic-view .fc-day-number {
 	text-align: center;
-	color : black;
+	
 }
 
 .fc-rtl .fc-basic-view .fc-day-number {
