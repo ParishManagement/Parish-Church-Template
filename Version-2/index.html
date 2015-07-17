@@ -3,10 +3,12 @@
 	<head> 
 		<title>Parallax Scrolling with HTML and jQuery - MrBool Tutorial</title>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width:device-width;initial-scale=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<link rel="stylesheet" href = "css/index.css" />
 		<link rel="stylesheet" href = "css/common.css" />
+		<link rel='stylesheet' href="css/lib/fullcalendar.css" />
+		<link href="css/lib/lionbars.css" rel="stylesheet" type="text/css">
 	</head>
 	<body style="overflow-x:hidden !important;"> 
 		<div class="container-fluid">
@@ -36,6 +38,14 @@
 			 </nav>
 		 </div>
 		<div class="container-fluid" style="height:100%;padding:0;margin:0;">
+			<!-- <div class="row">
+				<div class="col-sm-4 col-md-4 col-lg-4 churchContactSnippet">
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 churchImageSnippet">
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 churchAddressSnippet">
+				</div>
+			</div> -->
 			<div id="homePage" class="bgParallax" data-speed="10"> 
 				<div class="container">
 					<div style="position:relative;top:50px;" id="carousel-example" class="carousel slide" data-ride="carousel">
@@ -75,22 +85,36 @@
 				</div>
 			</div> 
 			<div id="churchPage" class="bgParallax" data-speed="10"> 
-				<div class="container">
-					<div class="row">
-						<div class="churchInformation col-sm-12 col-md-12 col-lg-12 posRelative" style="top:20px;">
-							<div class="col-sm-6 col-md-6 col-lg-6">
-								<div class="churchProfile">
-									<div class="profileInfo">
-									</div>
-								</div>
-								<div class="churchContactInformation">
-								
+				<div class="container-fluid">
+					<div class="row churchInformation posRelative" style="top:20px;">
+						<div class="col-sm-4 col-md-4 col-lg-4 churchRecentUpdates posRelative">
+							<div class="recentUpdates">
+								<h3>Recent Updates</h3>
+								<!-- <ul class="list-group">
+									<li class="list-group-item"><a href="#">Recent Update 1</a></li>
+									<li class="list-group-item"><a href="#">Recent Update 2</a></li>
+									<li class="list-group-item"><a href="#">Recent Update 3</a></li>
+									<li class="list-group-item"><a href="#">Recent Update 4</a></li>
+									<li class="list-group-item"><a href="#">Recent Update 5</a></li>
+								</ul> -->
+								<div class="list-group">
+								  <a href="#" class="list-group-item">First item</a>
+								  <a href="#" class="list-group-item">Second item</a>
+								  <a href="#" class="list-group-item">Third item</a>
 								</div>
 							</div>
-							<div class="col-sm-6 col-md-6 col-lg-6">
-								<div class="churchHistory">
-								
-								</div>
+						</div>
+						<div class="col-sm-4 col-md-4 col-lg-4 churchDetails posRelative">
+							<div class="churchHistory">
+								<h3>History</h3>
+								<p>
+									This church began as a mission church planted in the 1950s by a large independent fellowship in the centre of town. An initial congregation of 25 grew by the 1980s to nearly a hundred, but since then we have settled at about 90 in membership. The building was opened in the 1960s, with an extension in 1985. <br/>
+									In recent years, as a result of a fervent desire to see growth, both spirituality and numerically within the church, we have wanted to have a more flexible and user-friendly environment for those within the church and the wider community, and there has been gradual redevelopment. Many of our activities have benefited from this and the additional space has enabled the church to host a number of conferences and events. 
+								</p>
+							</div>
+						</div>
+						<div class="col-sm-4 col-md-4 col-lg-4 churchMEM posRelative">
+							<div id="memCalender">
 							</div>
 						</div>
 					</div>
@@ -128,6 +152,9 @@
 	<!-- Loading Scripts -->
 	<script src="js/jquery-2-1-4.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="js/lib/moment.min.js"></script>
+	<script src="js/lib/fullcalendar.min.js"></script>
+	<script src="js/lib/lionbars.js"></script>
 	<script src="js/index.js" ></script>
 	</body> 
 </html>

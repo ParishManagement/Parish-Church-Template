@@ -71,6 +71,23 @@ html, body
   
   /*Second Slide */
   .churchInformation {
-	border : 1px solid;
-	min-height : 300px;
+	min-height : 200px;
+	max-height : 400px;
+	
+  }
+  .churchHistory, #memCalender,
+  .recentUpdates{
+	padding:5px;
+	text-align: justify;
+	-webkit-box-shadow : 5px 5px 5px 5px rgba(0,0,0,0.7); 
+	-moz-box-shadow : 5px 5px 5px 5px rgba(0,0,0,0.7);
+	-ms-box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.7);
+	-o-box-shadow : 5px 5px 5px 5px rgba(0,0,0,0.7);
+	box-shadow : 5px 5px 5px 5px rgba(0,0,0,0.7);
+  }
+  .churchHistory h3, .recentUpdates h3{
+	margin-top : 5px !important;
+  }
+  .recentUpdates .list-group {
+	margin-bottom : 10px !important;
   }
