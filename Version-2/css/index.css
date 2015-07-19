@@ -19,10 +19,10 @@ html, body
 } 
 /* Define backgrounds of divs */
  #homePage {
-	background-image: url(../images/final0.jpg);
+	background-image: url(../images/churchImage2.jpg) !important;
  } 
  #churchPage { 
-	 background-image: url(../images/slide1.jpg); 
+	 background-image: url(../images/slide1.jpg) !important; 
 	 -webkit-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
 	 -moz-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
 	 -ms-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
@@ -30,7 +30,7 @@ html, body
 	 box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
  } 
   #priestProfie { 
-	 background-image: url(../images/slide3.jpg); 
+	 background-image: url(../images/slide3.jpg) !important; 
 	 -webkit-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
 	 -moz-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
 	 -ms-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
@@ -38,7 +38,7 @@ html, body
 	 box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
  } 
  #churchGallery { 
-	 background-image: url(../images/slide5.jpg); 
+	 background-image: url(../images/slide5.jpg) !important; 
 	 -webkit-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
 	 -moz-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
 	 -ms-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
@@ -46,7 +46,7 @@ html, body
 	 box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
  } 
 #footer { 
-	 background-image: url(../images/slide1.jpg); 
+	 background-image: url(../images/slide1.jpg) !important; 
 	/*  -webkit-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
 	 -moz-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
 	 -ms-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
@@ -64,7 +64,7 @@ html, body
 	background-color: maroon;
   }
   .carousel-content {
-		color:black !important;
+		color:white !important;
 		display:flex;
 		align-items:center;
   }
@@ -75,7 +75,7 @@ html, body
 	max-height : 400px;
 	
   }
-  .churchHistory, #memCalender,
+  .churchHistory, #memCalender,.churchNameandAddress,.churchContactDetails,
   .recentUpdates{
 	padding:5px;
 	text-align: justify;
@@ -91,3 +91,70 @@ html, body
   .recentUpdates .list-group {
 	margin-bottom : 10px !important;
   }
+  /*Marquee anchor tag */
+  /* marquee {
+	margin-left : 20px;
+	margin-top : 10px;
+  } */
+  marquee div a {
+	text-decoration:none;
+	display:block;
+	margin-bottom:10px;
+	color:white;
+  }
+  /*Church Detatils */
+  div.churchNameandAddress,div.churchContactDetails,div.recentUpdates{
+	min-height : 180px !important;
+	max-height : 350px;
+  }
+  p.churchName, p.churchAddress,p.phoneNumber,p.lanLineNumber,p.emailInfo{
+	width : 100%;
+  }
+  p.churchName span:first-child, p.churchAddress span:first-child,p.phoneNumber span:first-child,p.lanLineNumber span:first-child,p.emailInfo span:first-child{
+	float : left;
+	width : 50%;
+  }
+   p.churchName span:last-child, p.churchAddress span:last-child,p.phoneNumber span:last-child,p.lanLineNumber span:last-child,p.emailInfo span:last-child{
+	float : left;
+	width : 50%;
+  }
+  
+  .insertedTableData {
+	  position: absolute;
+	  bottom: 0;
+	  background-color: green;
+	  width: 14%;
+	  text-align: center;
+	  border: none;
+  }
+  
+  /*Showing the dayview agenda in overlay*/
+  .showDayView {
+	position: absolute;
+	width: 100%;
+	top: 10px;
+	bottom: 10px;
+  }
+  #dayAgenda{
+	position: absolute;
+	max-width: 65%;
+  }
+  
+  /*Event Holder */
+  .eventSelector {
+	position: absolute;
+	right: 10px;
+	width: 30%;
+  }
+  .dateHolder {
+	width : 100%;
+  }
+  .dateHolder div {
+	float:left;
+	width: 50%;
+  }
+  .eventDescription {
+	float: left;
+	width: 100%;
+  }
+  

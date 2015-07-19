@@ -389,6 +389,11 @@ hr.fc-divider {
 	padding: 0;
 	vertical-align: top;
 }
+/*Custom Css for Fullcalendar css */
+/*Added for Cursot Pointer -- Naveen*/
+.fc td, .fc td.fc-today {
+	cursor : pointer;
+}
 
 .fc td.fc-today {
 	border-style: double; /* overcome neighboring borders */
@@ -479,6 +484,7 @@ temporary rendered events).
 
 	/* don't put a border between events and/or the day number */
 	border-bottom: 0;
+	cursor : pointer;
 }
 
 .fc-row .fc-content-skeleton tbody td, /* cells with events inside (so NOT the day number cell) */
