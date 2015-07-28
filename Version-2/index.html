@@ -3,8 +3,11 @@
 	<head> 
 		<title>Parallax Scrolling with HTML and jQuery - MrBool Tutorial</title>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width:device-width;initial-scale=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel='stylesheet' href="css/lib/fullcalendar.css" />
+		<link href="css/lib/lionbars.css" rel="stylesheet" type="text/css">
+		<link href="css/lib/animate.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href = "css/index.css" />
 		<link rel="stylesheet" href = "css/common.css" />
 	</head>
@@ -35,7 +38,15 @@
 			  </div>
 			 </nav>
 		 </div>
-		<div class="container-fluid" style="height:100%;padding:0;margin:0;">
+		<div id="contentManager" class="container-fluid" style="height:100%;padding:0;margin:0;">
+			<!-- <div class="row">
+				<div class="col-sm-4 col-md-4 col-lg-4 churchContactSnippet">
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 churchImageSnippet">
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 churchAddressSnippet">
+				</div>
+			</div> -->
 			<div id="homePage" class="bgParallax" data-speed="10"> 
 				<div class="container">
 					<div style="position:relative;top:50px;" id="carousel-example" class="carousel slide" data-ride="carousel">
@@ -74,26 +85,73 @@
 					</div>
 				</div>
 			</div> 
-			<div id="churchPage" class="bgParallax" data-speed="10"> 
-				<div class="container">
-					<div class="row">
-						<div class="churchInformation col-sm-12 col-md-12 col-lg-12 posRelative" style="top:20px;">
-							<div class="col-sm-6 col-md-6 col-lg-6">
-								<div class="churchProfile">
-									<div class="profileInfo">
-									</div>
-								</div>
-								<div class="churchContactInformation">
-								
+			<div id="churchPage" class="bgParallax" data-speed="10" style="width:100%;"> 
+				<div class="container-fluid">
+					<div class="row churchInformation posRelative" style="top:20px;">
+						<div class="col-sm-3 col-md-3 col-lg-3 churchRecentUpdates posRelative">
+							<div class="churchNameandAddress marBot10 marBot5" style="height:100px;">
+								<h3>Church Name & Address</h3>
+								<div class="nameAndAddress">
+									<p class="churchName">
+										<span>Name</span>
+										<span>Azan Labs</span>
+									</p>
+									<div class="clear"></div>
+									<p class="churchAddress">
+										<span>Address</span>
+										<span>A608, Sare Crescent Parc,Chegalpat Taluk,Thiruporur,TN - 603110</span>
+									</p>
 								</div>
 							</div>
-							<div class="col-sm-6 col-md-6 col-lg-6">
-								<div class="churchHistory">
-								
+							<div class="churchContactDetails marBot10 marBot5">
+								<h3>Church Contact Details</h3>
+								<div class="contactDetails">
+									<p class="phoneNumber">
+										<span>Mobile</span>
+										<span>123456789</span>
+									</p>
+									<p class="lanLineNumber">
+										<span>Land Line</span>
+										<span>04467423899</span>
+									</p>
+									<p class="emailInfo">
+										<span>Email</span>
+										<span>thobith@azanlabs.com</span>
+									</p>
 								</div>
+							</div>
+							<div class="recentUpdates">
+								<h3>Recent Updates</h3>
+								<!-- <ul class="list-group">
+									<li class="list-group-item"><a href="#">Recent Update 1</a></li>
+									<li class="list-group-item"><a href="#">Recent Update 2</a></li>
+									<li class="list-group-item"><a href="#">Recent Update 3</a></li>
+									<li class="list-group-item"><a href="#">Recent Update 4</a></li>
+								</ul> -->
+								
 							</div>
 						</div>
+						<div class="col-sm-6 col-md-6 col-lg-6 churchDetails posRelative">
+							<div class="churchHistory">
+								<h3>History</h3>
+								<p>
+									This church began as a mission church planted in the 1950s by a large independent fellowship in the centre of town. An initial congregation of 25 grew by the 1980s to nearly a hundred, but since then we have settled at about 90 in membership. The building was opened in the 1960s, with an extension in 1985. <br/>
+									In recent years, as a result of a fervent desire to see growth, both spirituality and numerically within the church, we have wanted to have a more flexible and user-friendly environment for those within the church and the wider community, and there has been gradual redevelopment. Many of our activities have benefited from this and the additional space has enabled the church to host a number of conferences and events. 
+								</p>
+							</div>
+						</div>
+						<div class="col-sm-3 col-md-3 col-lg-3 churchMEM posRelative">
+							<button id="bookYourRequest" type="button" class="btn btn-primary btn-block marBot10">Book Your Request</button>
+							<div id="memCalender" style="display:none;">
+							</div>
+						</div>
+						<!-- <div class="col-sm-5 col-md-5 col-lg-5 churchMEM posRelative">
+							<div id="memCalender">
+							</div>
+						</div> -->
 					</div>
+				</div>
+				<div class="overlay" style="display:none;">
 				</div>
 			</div>
 			<div id="priestProfie" class="bgParallax" data-speed="10">
@@ -125,9 +183,29 @@
 				
 			</div>
 		</div>
+		<div class="row" style="width:100%;">
+			<div class="col-sm-7 col-md-7 col-lg-7" id="overlay" style="min-height:200px;display:none;opacity:2;height:500px;">
+			<div id="close" style="position:absolute;top:-12px;right:-24px;">
+				<a href="#close"><img src="images/Close-icon.png" alt="close" style="border-radius:25px;"/></a>
+			</div>
+			<div id="overlayContent" style="height:100%;">
+				<!-- <div class="">
+					<div>
+					</div>
+					<div>
+					</div>
+				</div> -->
+			</div>
+			</div>
+		</div>
+	<!-- <div class="overlay" style="display:none;">
+	</div> -->
 	<!-- Loading Scripts -->
 	<script src="js/jquery-2-1-4.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="js/lib/moment.min.js"></script>
+	<script src="js/lib/fullcalendar.min.js"></script>
+	<script src="js/lib/lionbars.js"></script>
 	<script src="js/index.js" ></script>
 	</body> 
 </html>
