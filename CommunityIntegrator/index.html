@@ -4,21 +4,43 @@
 		<title>Community Integrato</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css' />
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="css/index.css" type="text/css" />
 	</head>
 	<body ng-app="sampleRouteProviderApp">
 		<div class="container-fluid" style="height:50px;" ng-include="'templates/navBar.html'"></div>
 		<div class="container-fluid" style="position:relative;">
-			<div class="row">
-			<div class="col-md-3">
-				<ul class="nav">
-					<li><a href="#AddNewOrder"> Add New Order </a></li>
-					<li><a href="#ShowOrders"> Show Order </a></li>
-				</ul>
-			</div>
-			<div class="col-md-9">
-				<div ng-view></div>
-			</div>
+			<div id="homePage">
+				<div class="row">
+				<!-- <div class="col-md-3">
+					<ul class="nav">
+						<li><a href="#AddNewOrder"> Add New Order </a></li>
+						<li><a href="#ShowOrders"> Show Order </a></li>
+					</ul>
+				</div>
+				<div class="col-md-9">
+					<div ng-view></div>
+				</div> -->
+					<div class="col-md-3">
+						<!-- <div class="mirrorAngelImage leftSideAngel">
+						</div> -->
+					</div>
+					<div class="col-md-6" style="margin-top:20px;">
+						<div class="mirrorAngelImage leftSideAngel" style="float:left;width:23%;">
+						</div>
+						<div class="bannerImage" style="float:left;width:54%;margin-top:40px;">
+							<img src="images/bannerImage7.svg" style="max-width:100%;" />
+						</div>
+						<div class="mirrorAngelImage rightSideAngel" style="float:left;width:23%;>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<!-- <div class="mirrorAngelImage leftSideAngel">
+						</div> -->
+					</div>
+				</div>
 			</div>
 		</div>
 		<script src="https://code.angularjs.org/1.2.0/angular.js"></script>

@@ -13,7 +13,7 @@
 				controller : 'showOrdersController'
 			}).
 			otherwise({
-				redirectTo : '/AddNewOrder'
+				redirectTo : '/home'
 			});
 		}
 	]);

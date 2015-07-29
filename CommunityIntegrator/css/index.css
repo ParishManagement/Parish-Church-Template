@@ -1,0 +1,24 @@
+/*Banner Image for Home Page */ 
+
+.bannerImage {
+	/* background: url("../images/bannerImage1.jpg") no-repeat;
+	max-width : 70%; */
+}
+
+/*Mirror Angel Image Sprite Image*/
+
+.mirrorAngelImage {
+	background : url("../images/mirrorAngelImage.jpg") no-repeat;
+}
+
+.leftSideAngel{
+	background-position: -6px -2px; 
+	width: 144px;
+	height: 268px;
+}
+
+.rightSideAngel {
+	background-position: -153px 0px; 
+	width: 145px;
+	height: 270px;
+}
