@@ -1,5 +1,9 @@
 (function(){
-	var appModule = angular.module('sampleRouteProviderApp',['ngRoute']);
+	/* $(".spinnerDiv").css("display","block");
+	$(window).load(function(){
+		$(".spinnerDiv").css("display","none");
+	}); */
+	var appModule = angular.module('sampleRouteProviderApp',['ngRoute','ui.bootstrap']);
 	
 	appModule.config(['$routeProvider',
 		function($routeProvider){
@@ -27,4 +31,10 @@
 	appModule.controller('showOrdersController',function($scope){
 		$scope.message = "This pages is used to show the orders"
 	});
+	
+	//Creating the controller for caurosal
+	//appModule.controller('textCaurosal',function($scope){
+		/* $scope.myInterval = 5000;
+		$scope.noWrapSlides = false; */
+	//});
 })();

@@ -11,14 +11,27 @@
 	background : url("../images/mirrorAngelImage.jpg") no-repeat;
 }
 
+/*Left Side Angel*/
 .leftSideAngel{
-	background-position: -6px -2px; 
-	width: 144px;
-	height: 268px;
+	background-position: -1px -3px; 
+	width: 146px;
+	height: 267px;
 }
-
+/*Right Side Angel*/
 .rightSideAngel {
 	background-position: -153px 0px; 
 	width: 145px;
 	height: 270px;
 }
+/*Banner Content*/
+.bannerContent{
+	  position: absolute;
+	  top: 15%;
+	  left: 37%;
+}
+ /*Caurosal Effect Styel*/
+ /* .carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	  width: 70%;
+	  margin: auto;
+  } */
