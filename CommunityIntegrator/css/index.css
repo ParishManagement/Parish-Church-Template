@@ -1,3 +1,43 @@
+/*
+	** Created By Naveen
+	**Date : 30th July,2015 
+*/
+
+/*Font for html and Body */
+
+html, body{
+	font-family : "source sans pro" sans-serif;
+}
+
+/*Background Image as a Cover */ 
+.bgParallaxImage { 
+	margin:auto; 
+	width: 100%; 
+	max-width: 1920px; 
+	position: relative; 
+	background : url("../images/field.gif");
+	text-shadow:0 0 10px rgba(0,0,0,0.7); 
+	background-position: 100% 100%; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	background-size : cover !important;
+	/* -webkit-filter: grayscale(100%); 
+	filter: grayscale(100%); */
+}
+
+.churchAffiliatesImage {
+	margin: auto; 
+	width: 100%; 
+	max-width: 1920px; 
+	position: relative; 
+	background : url("../images/backgroundImage2.png");
+	text-shadow:0 0 10px rgba(0,0,0,0.7); 
+	background-position: 100% 100%; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	background-size : cover !important;
+}
+
 /*Banner Image for Home Page */ 
 
 .bannerImage {
@@ -26,12 +66,14 @@
 /*Banner Content*/
 .bannerContent{
 	  position: absolute;
-	  top: 15%;
+	  top: 7%;
 	  left: 37%;
 }
  /*Caurosal Effect Styel*/
- /* .carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-	  width: 70%;
-	  margin: auto;
-  } */
+ #slides_control > div{
+  height: 200px;
+}
+#slides_control {
+  position:relative;
+  width: 100%;
+}
