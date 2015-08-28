@@ -1,160 +1,163 @@
-* {margin:0; padding: 0;} 
+/*
+	** Created By Naveen
+	**Date : 30th July,2015 
+*/
 
-html, body
- {height:100%;} 
-/** format elements which have backgrounds parallax **/ 
-.bgParallax { 
-	font-family: 'Elsie', cursive; 
-	color:#FFF; 
-	margin: 0 auto; 
+/*Font for html and Body */
+
+html, body{
+	font-family : "source sans pro" sans-serif;
+}
+
+/*Background Image as a Cover */ 
+.bgParallaxImage { 
+	margin:auto; 
 	width: 100%; 
 	max-width: 1920px; 
 	position: relative; 
-	min-height: 100%; 
+	background : url("../images/field.gif");
 	text-shadow:0 0 10px rgba(0,0,0,0.7); 
 	background-position: 100% 100%; 
 	background-repeat: no-repeat; 
 	background-attachment: fixed; 
 	background-size : cover !important;
-} 
-/* Define backgrounds of divs */
- #homePage {
-	background-image: url(../images/churchImage2.jpg) !important;
- } 
- #churchPage { 
-	 background-image: url(../images/slide1.jpg) !important; 
-	 -webkit-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 -moz-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 -ms-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 -o-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
- } 
-  #priestProfie { 
-	 background-image: url(../images/slide3.jpg) !important; 
-	 -webkit-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 -moz-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 -ms-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 -o-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
- } 
- #churchGallery { 
-	 background-image: url(../images/slide5.jpg) !important; 
-	 -webkit-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 -moz-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 -ms-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 -o-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
- } 
-#footer { 
-	 background-image: url(../images/slide1.jpg) !important; 
-	/*  -webkit-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 -moz-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 -ms-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 -o-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7); 
-	 box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);  */
- } 
- 
- /*Caurosal Effect Styel*/
- .carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-	  width: 70%;
-	  margin: auto;
-  }
-  .labelcolor {
-	background-color: maroon;
-  }
-  .carousel-content {
-		color:white !important;
-		display:flex;
-		align-items:center;
-  }
-  
-  /*Second Slide */
-  .churchInformation {
-	min-height : 200px;
-	max-height : 400px;
-	
-  }
-  .churchHistory, #memCalender,.churchNameandAddress,.churchContactDetails,
-  .recentUpdates{
-	padding:5px;
-	text-align: justify;
-	-webkit-box-shadow : 5px 5px 5px 5px rgba(0,0,0,0.7); 
-	-moz-box-shadow : 5px 5px 5px 5px rgba(0,0,0,0.7);
-	-ms-box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.7);
-	-o-box-shadow : 5px 5px 5px 5px rgba(0,0,0,0.7);
-	box-shadow : 5px 5px 5px 5px rgba(0,0,0,0.7);
-  }
-  .churchHistory h3, .recentUpdates h3{
-	margin-top : 5px !important;
-  }
-  .recentUpdates .list-group {
-	margin-bottom : 10px !important;
-  }
-  /*Marquee anchor tag */
-  /* marquee {
-	margin-left : 20px;
-	margin-top : 10px;
-  } */
-  marquee div a {
-	text-decoration:none;
-	display:block;
-	margin-bottom:10px;
-	color:white;
-  }
-  /*Church Detatils */
-  div.churchNameandAddress,div.churchContactDetails,div.recentUpdates{
-	min-height : 180px !important;
-	max-height : 350px;
-  }
-  p.churchName, p.churchAddress,p.phoneNumber,p.lanLineNumber,p.emailInfo{
-	width : 100%;
-  }
-  p.churchName span:first-child, p.churchAddress span:first-child,p.phoneNumber span:first-child,p.lanLineNumber span:first-child,p.emailInfo span:first-child{
-	float : left;
-	width : 50%;
-  }
-   p.churchName span:last-child, p.churchAddress span:last-child,p.phoneNumber span:last-child,p.lanLineNumber span:last-child,p.emailInfo span:last-child{
-	float : left;
-	width : 50%;
-  }
-  
-  .insertedTableData {
+	/* -webkit-filter: grayscale(100%); 
+	filter: grayscale(100%); */
+}
+
+.churchAffiliatesImage {
+	margin: auto; 
+	width: 100%; 
+	max-width: 1920px; 
+	position: relative; 
+	/* background : url("../images/backgroundImage2.png"); */
+	text-shadow:0 0 10px rgba(0,0,0,0.7); 
+	background-position: 100% 100%; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	background-size : cover !important;
+}
+
+/*Banner Image for Home Page */ 
+
+.bannerImage {
+	/* background: url("../images/bannerImage1.jpg") no-repeat;
+	max-width : 70%; */
+}
+
+/*Mirror Angel Image Sprite Image*/
+
+.mirrorAngelImage {
+	background : url("../images/mirrorAngelImage.jpg") no-repeat;
+}
+
+/*Left Side Angel*/
+.leftSideAngel{
+	background-position: -1px -3px; 
+	width: 146px;
+	height: 267px;
+}
+/*Right Side Angel*/
+.rightSideAngel {
+	background-position: -153px 0px; 
+	width: 145px;
+	height: 270px;
+}
+/*Banner Content*/
+.bannerContent{
 	  position: absolute;
-	  bottom: 0;
-	  background-color: green;
-	  width: 14%;
-	  text-align: center;
-	  border: none;
+	  top: 7%;
+	  left: 37%;
+}
+ /*Caurosal Effect Styel*/
+ #slides_control > div{
+  height: 200px;
+}
+#slides_control {
+  position:relative;
+  width: 100%;
+}
+
+/*Church Affiliates Page*/
+
+/*Adding Snap View */ 
+.snapView {
+  height: 150px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.snapViewOfAffiliates {
+  height: 222px;
+  overflow : hidden;
+}
+
+/*Church Affiliates Vertical View */
+.carousel-inner.vertical {
+  height: 100%;
+}
+.carousel-inner.vertical > .item {
+  -webkit-transition: .6s ease-in-out top;
+  -o-transition: .6s ease-in-out top;
+  transition: .6s ease-in-out top;
+}
+@media all and (transform-3d),
+(-webkit-transform-3d) {
+  .carousel-inner.vertical > .item {
+    -webkit-transition: -webkit-transform .6s ease-in-out;
+    -o-transition: -o-transform .6s ease-in-out;
+    transition: transform .6s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
   }
-  
-  /*Showing the dayview agenda in overlay*/
-  .showDayView {
-	position: absolute;
-	width: 100%;
-	top: 10px;
-	bottom: 10px;
+  .carousel-inner.vertical > .item.next,
+  .carousel-inner.vertical > .item.active.right {
+    top: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
   }
-  #dayAgenda{
-	position: absolute;
-	max-width: 65%;
+  .carousel-inner.vertical > .item.prev,
+  .carousel-inner.vertical > .item.active.left {
+    top: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
   }
-  
-  /*Event Holder */
-  .eventSelector {
-	position: absolute;
-	right: 10px;
-	width: 30%;
+  .carousel-inner.vertical > .item.next.left,
+  .carousel-inner.vertical > .item.prev.right,
+  .carousel-inner.vertical > .item.active {
+    top: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
-  .dateHolder {
-	width : 100%;
-  }
-  .dateHolder div {
-	float:left;
-	width: 50%;
-  }
-  .eventDescription {
-	float: left;
-	width: 100%;
-  }
-  
+}
+.carousel-inner.vertical > .active {
+  top: 0;
+}
+.carousel-inner.vertical > .next,
+.carousel-inner.vertical > .prev {
+  top: 0;
+  height: 100%;
+  width: auto;
+}
+.carousel-inner.vertical > .next {
+  left: 0;
+  top: 100%;
+}
+.carousel-inner.vertical > .prev {
+  left: 0;
+  top: -100%
+}
+.carousel-inner.vertical > .next.left,
+.carousel-inner.vertical > .prev.right {
+  top: 0;
+}
+.carousel-inner.vertical > .active.left {
+  left: 0;
+  top: -100%;
+}
+.carousel-inner.vertical > .active.right {
+  left: 0;
+  top: 100%;
+}
